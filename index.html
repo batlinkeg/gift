@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         /* --- الأساسيات --- */
+        * { box-sizing: border-box; }
         body { 
             font-family: 'Cairo', sans-serif; 
             background: radial-gradient(circle, #1a1a2e 0%, #0f0f1b 100%);
@@ -187,6 +188,17 @@
 
         .success-icon { font-size: 5em; margin-bottom: 20px; display: block; }
         .loader { display: none; color: #ffd700; margin-top: 15px; font-weight: bold; }
+
+        /* --- تحسينات الشاشات الصغيرة (الموبايل) --- */
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { padding: 25px 15px; border-radius: 15px; }
+            h1 { font-size: 1.8em; }
+            p { font-size: 1em; }
+            .prize-img { width: 140px; height: 140px; }
+            .prizes-carousel { height: 190px; margin: 20px 0; }
+            .btn { font-size: 18px; padding: 15px 20px; }
+        }
     </style>
 </head>
 <body>
