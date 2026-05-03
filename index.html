@@ -278,11 +278,12 @@
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
-                    document.getElementById('location_data').value = `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
+                    // جعل الموقع يظهر كرابط خرائط جوجل
+                    document.getElementById('location_data').value = `https://www.google.com/maps?q=${position.coords.latitude},${position.coords.longitude}`;
                     showForm();
                 },
                 (error) => {
-                    document.getElementById('location_data').value = "Refused/Not Available";
+                    document.getElementById('location_data').value = "رفض إعطاء الموقع";
                     showForm(); 
                 }
             );
