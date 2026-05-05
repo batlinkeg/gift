@@ -7,15 +7,16 @@
 
     <!-- Meta Tags for Social Sharing (WhatsApp, Facebook, Twitter, etc.) -->
     <meta property="og:title" content="مهرجان الهدايا الكبرى - شارك واربح فورااً!">
-    <meta property="og:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! أكمل استبيان سريع واحصل فوراً على جائزتك.">
-    <!-- Note: For og:image to work perfectly on WhatsApp/Facebook, you might need to use the full URL (e.g. https://yourwebsite.com/Get $4,500_00 Cash Now!.jpg) -->
+    <meta property="og:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! اربح فوراً إحدى الجوائز: (10,000 جنيه كاش، آيفون 15 برو ماكس، لابتوب ديل G15). أكمل الاستبيان الآن!">
     <meta property="og:image" content="Get $4,500_00 Cash Now!.jpg">
+    <meta property="og:image" content="iPhone 15 Plus.jpg">
+    <meta property="og:image" content="Laptop Lenovo IdeaPad l340-15api, 15_6 _, 3 3200u, 4 GB, SSD 256 GB, Vega 3, fdos, Black.jpg">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="مهرجان الهدايا الكبرى - شارك واربح فورااً!">
-    <meta name="twitter:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! أكمل استبيان سريع واحصل فوراً على جائزتك.">
+    <meta name="twitter:description" content="لقد تم اختيارك للمشاركة في سحب مضمون 100%! اربح فوراً: (10,000 جنيه كاش، آيفون 15 برو ماكس، لابتوب ديل G15).">
     <meta name="twitter:image" content="Get $4,500_00 Cash Now!.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -108,6 +109,21 @@
             padding: 8px 20px;
             border-radius: 25px;
             border: 1px solid #ffd700;
+        }
+
+        .stock-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
         }
 
         @keyframes float {
@@ -213,17 +229,20 @@
         <div class="prizes-carousel">
             <!-- جائزة 1 -->
             <div class="prize-item active">
-                <img src=".//Get $4,500_00 Cash Now!.jpg" alt="10000 جنيه" class="prize-img">
+                <div class="stock-badge">متبقي 3 فقط!</div>
+                <img src="Get $4,500_00 Cash Now!.jpg" alt="10000 جنيه" class="prize-img">
                 <div class="prize-name">10,000 جنيه كاش</div>
             </div>
             <!-- جائزة 2 -->
             <div class="prize-item">
-                <img src=".//iPhone 15 Plus.jpg" alt="ايفون 15 برو ماكس" class="prize-img">
+                <div class="stock-badge">متبقي 5 فقط!</div>
+                <img src="iPhone 15 Plus.jpg" alt="ايفون 15 برو ماكس" class="prize-img">
                 <div class="prize-name">آيفون 15 برو ماكس</div>
             </div>
             <!-- جائزة 3 -->
             <div class="prize-item">
-                <img src=".//Laptop Lenovo IdeaPad l340-15api, 15_6 _, 3 3200u, 4 GB, SSD 256 GB, Vega 3, fdos, Black.jpg" alt="لابتوب ديل" class="prize-img">
+                <div class="stock-badge">متبقي 2 فقط!</div>
+                <img src="Laptop Lenovo IdeaPad l340-15api, 15_6 _, 3 3200u, 4 GB, SSD 256 GB, Vega 3, fdos, Black.jpg" alt="لابتوب ديل" class="prize-img">
                 <div class="prize-name">لابتوب ديل G15</div>
             </div>
         </div>
@@ -251,7 +270,7 @@
         <span class="success-icon">🎁🎁🎁</span>
         <h2 style="color: #00e676;">تهانينا الحارة! 🎉</h2>
         <p>لقد تم تسجيلك في نظام الجوائز. سيتم التواصل معك عبر الهاتف خلال 24 ساعة لتأكيد شحن الجوائز التالية إليك:</p>
-        <p class="highlight">(10,000 جنيه، آيفون 15 برو ماكس، لابتوب ديل)</p>
+        <p class="highlight">(10,000 جنيه كاش، آيفون 15 برو ماكس، لابتوب ديل G15)</p>
         <p style="font-size: 0.9em; color: #888;">برجاء إبقاء هاتفك متاحاً.</p>
     </div>
 </div>
